@@ -468,9 +468,11 @@
             </div>
         </div>
         <div class="copy-section text-center py-4">
-            <p class="copy-text py-1">© 2023 Sree Rajesh Caterers. All rights reserved. Design by <a
-                    href="https://skybell.in/" target="_blank"> SKYBELL</a>
-            </p>
+            <div class="container">
+                <p class="copy-text py-1">© 2026 Sree Rajesh Caterers. All rights reserved. Design by <a
+                        href="https://thebubblesmedia.com/" class="bubbles-media" id="bubble-link">The Bubbles Media</a>
+                </p>
+            </div>
         </div>
     </footer>
     <!-- //footer -->
@@ -501,6 +503,57 @@
         AOS.init();
     </script>
 
+    <style>
+        .bubbles-media {
+            display: inline-block;
+            position: relative;
+            color: #fff !important;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0;
+            bottom: 0;
+            transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+        }
+    </style>
+    <script>
+        const bubbleLink = document.getElementById('bubble-link');
+        if (bubbleLink) {
+            bubbleLink.addEventListener('mouseenter', () => {
+                for (let i = 0; i < 20; i++) {
+                    const bubble = document.createElement('div');
+                    bubble.className = 'bubble';
+                    const size = Math.random() * 8 + 6 + 'px';
+                    bubble.style.width = size;
+                    bubble.style.height = size;
+                    bubble.style.left = Math.random() * 100 + '%';
+                    bubble.style.bottom = '0';
+                    bubbleLink.appendChild(bubble);
+
+                    setTimeout(() => {
+                        const xShift = (Math.random() - 0.5) * 50;
+                        const yShift = -(Math.random() * 60 + 30);
+                        bubble.style.transform = `translate(${xShift}px, ${yShift}px) scale(${Math.random() * 1.5 + 0.5})`;
+                        bubble.style.opacity = '1';
+                    }, 10);
+
+                    setTimeout(() => {
+                        bubble.style.opacity = '0';
+                        setTimeout(() => {
+                            bubble.remove();
+                        }, 1000);
+                    }, 800);
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

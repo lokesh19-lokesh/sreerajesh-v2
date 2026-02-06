@@ -198,13 +198,35 @@
             padding: 19px;
         }
 
-        .w3l-footer-16 p.copy-text a {
-            color: var(--primary-color);
-            /*text-decoration: underline;*/
+        /* Bubble Animation Styles */
+        .bubbles-media {
+            display: inline-block;
+            position: relative;
+            color: #fff !important;
+            font-weight: bold;
         }
 
-        .w3l-footer-16 p.copy-text a:hover {
-            color: #e2d811;
+        .bubbles-media span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bubbles-media:hover .bubble {
+            opacity: 1;
+            transform: translateY(-50px);
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            opacity: 0;
+            transition: transform 1s ease-out, opacity 1s ease-out;
         }
 
         .w3l-footer-16 input[type="email"] {
@@ -762,9 +784,11 @@
             </div>
         </div>
         <div class="copy-section text-center py-4">
-            <p class="copy-text py-1">© 2023 Sree Rajesh Caterers. All rights reserved. Design by <a
-                    href="https://skybell.in/" target="_blank"> SKYBELL</a>
-            </p>
+            <div class="container">
+                <p class="copy-text py-1">© 2026 Sree Rajesh Caterers. All rights reserved. Design by <a
+                        href="https://thebubblesmedia.com/" class="bubbles-media" id="bubble-link">The Bubbles Media</a>
+                </p>
+            </div>
         </div>
     </footer>
     <!-- //footer -->
@@ -778,6 +802,37 @@
         AOS.init();
     </script>
 
+    <script>
+        const bubbleLink = document.getElementById('bubble-link');
+        if (bubbleLink) {
+            bubbleLink.addEventListener('mouseenter', () => {
+                for (let i = 0; i < 20; i++) {
+                    const bubble = document.createElement('div');
+                    bubble.className = 'bubble';
+                    const size = Math.random() * 8 + 6 + 'px';
+                    bubble.style.width = size;
+                    bubble.style.height = size;
+                    bubble.style.left = Math.random() * 100 + '%';
+                    bubble.style.bottom = '0';
+                    bubbleLink.appendChild(bubble);
+
+                    setTimeout(() => {
+                        const xShift = (Math.random() - 0.5) * 50;
+                        const yShift = -(Math.random() * 60 + 30);
+                        bubble.style.transform = `translate(${xShift}px, ${yShift}px) scale(${Math.random() * 1.5 + 0.5})`;
+                        bubble.style.opacity = '1';
+                    }, 10);
+
+                    setTimeout(() => {
+                        bubble.style.opacity = '0';
+                        setTimeout(() => {
+                            bubble.remove();
+                        }, 1000);
+                    }, 800);
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

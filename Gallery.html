@@ -891,11 +891,44 @@
 
         .w3l-footer-16 p.copy-text a {
             color: var(--primary-color);
-            /*text-decoration: underline;*/
+            position: relative;
+            text-decoration: none;
         }
 
         .w3l-footer-16 p.copy-text a:hover {
             color: #e2d811;
+        }
+
+        /* Bubble Animation Styles */
+        .bubbles-media {
+            display: inline-block;
+            position: relative;
+            color: #fff !important;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .bubbles-media span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bubbles-media:hover .bubble {
+            opacity: 1;
+            transform: translateY(-50px);
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            opacity: 0;
+            transition: transform 1s ease-out, opacity 1s ease-out;
         }
 
         .w3l-footer-16 input[type="email"] {
@@ -1309,9 +1342,11 @@
             </div>
         </div>
         <div class="copy-section text-center py-4">
-            <p class="copy-text py-1">© 2023 Sree Rajesh Caterers. All rights reserved. Design by <a
-                    href="https://skybell.in/" target="_blank"> SKYBELL</a>
-            </p>
+            <div class="container">
+                <p class="copy-text py-1">© 2026 Sree Rajesh Caterers. All rights reserved. Design by <a
+                        href="https://thebubblesmedia.com/" class="bubbles-media" id="bubble-link">The Bubbles
+                        Media</a></p>
+            </div>
         </div>
     </footer>
     <!-- //footer -->

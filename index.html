@@ -547,6 +547,90 @@
         opacity: 1;
       }
     }
+
+    /* PDF Modal Styles */
+    .pdf-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .pdf-modal.show {
+      display: flex !important;
+      opacity: 1;
+    }
+
+    .pdf-modal-content {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .pdf-modal.show .pdf-modal-content {
+      transform: scale(1);
+    }
+
+    .pdf-modal-header {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .pdf-modal-body {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .pdf-modal-footer {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn-modal {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-confirm {
+      background-color: #cc2027;
+      color: #fff;
+    }
+
+    .btn-confirm:hover {
+      background-color: #b0181e;
+    }
+
+    .btn-cancel {
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    .btn-cancel:hover {
+      background-color: #d0d0d0;
+    }
   </style>
 
 
@@ -810,7 +894,7 @@
               <div class="item">
                 <div class="item_inner">
                   <div class="image">
-                    <img src="rajeshimedia/" alt="Corporate Events">
+                    <img src="rajeshimedia/CorporateEvents.png" alt="Corporate Events">
                     <a href="#"></a>
                   </div>
                   <h3><a href="#">Corporate Events</a></h3>
@@ -827,14 +911,20 @@
           <h2 class="heading">Our Special Menus</h2>
           <hr class="heading_space">
           <ul class="menu_widget">
-            <li>Basic <span>Veg Menu</span></li>
-            <li>Premium <span>Veg Menu</span></li>
-            <li>Gold <span>Veg Menu</span></li>
-            <li>Royal <span>Veg Menu</span></li>
-            <li>Basic <span>Non-Veg</span></li>
-            <li>Premium <span>Non-Veg</span></li>
-            <li>Gold <span>Non-Veg</span></li>
-            <li>Royal <span>Non-Veg</span></li>
+            <li><a href="#"
+                onclick="openPdfConfirm(event, 'rajeshimedia/pdfs/200 members above south and north.pdf', '200 Members Above South & North')">200
+                Members Above South & North</a></li>
+            <li><a href="#"
+                onclick="openPdfConfirm(event, 'rajeshimedia/pdfs/500 member above Emperor.pdf', '500 Members Above Emperor')">500
+                Members Above Emperor</a></li>
+            <li><a href="#"
+                onclick="openPdfConfirm(event, 'rajeshimedia/pdfs/1000 member above U\'R Dreams.pdf', '1000 Members Above U\'R Dreams')">1000
+                Members Above U'R Dreams</a></li>
+            <li><a href="#"
+                onclick="openPdfConfirm(event, 'rajeshimedia/pdfs/1000 Members Excellency.pdf', '1000 Members Excellency')">1000
+                Members Excellency</a></li>
+            <li><a href="#" onclick="openPdfConfirm(event, 'rajeshimedia/pdfs/veg menu.pdf', 'Veg Menu')">Veg Menu</a>
+            </li>
           </ul>
           <div class="working-hours mt-4" style="margin-top: 30px;">
             <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 15px;">Working Hours</h3>
@@ -854,14 +944,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h2 class="heading ">Our   Specialities</h2>
+          <h2 class="heading">Our Specialities</h2>
           <hr class="heading_space">
         </div>
       </div>
       <div class="row" data-aos="fade-up" data-aos-duration="3000">
         <div class="col-md-3 col-sm-6 feature text-center">
           <i class="icon-glass"></i>
-          <h3><a href="">Separate veg & & non-veg food</a></h3>
+          <h3><a href="">Separate veg & non-veg food</a></h3>
           <p>Enjoy a diverse culinary experience with our separate vegetarian and non-vegetarian menus, catering to
             every palate at your event.</p>
         </div>
@@ -873,7 +963,7 @@
         </div>
         <div class="col-md-3 col-sm-6 feature text-center">
           <i class="icon-glass"></i>
-          <h3><a href="">Service available across Hyderabad</a></h3>
+          <h3><a href="" style="color: #CC2027;">Service available across Hyderabad</a></h3>
           <p>Wherever you are in Hyderabad, our catering service comes to you, ensuring your events are infused with
             delicious flavors and impeccable service.</p>
         </div>
@@ -1198,6 +1288,55 @@
           }, 800);
         }
       });
+    }
+  </script>
+  <!-- Custom PDF Confirmation Modal -->
+  <div id="pdfModal" class="pdf-modal">
+    <div class="pdf-modal-content">
+      <div class="pdf-modal-header">Open Menu PDF?</div>
+      <div class="pdf-modal-body" id="pdfModalBody">Are you sure you want to view this menu?</div>
+      <div class="pdf-modal-footer">
+        <button class="btn-modal btn-cancel" onclick="closePdfModal()">Cancel</button>
+        <button class="btn-modal btn-confirm" id="confirmPdfBtn">Open PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentPdfUrl = '';
+
+    function openPdfConfirm(event, url, name) {
+      event.preventDefault();
+      currentPdfUrl = url;
+      document.getElementById('pdfModalBody').innerHTML = 'Do you want to open <strong>' + name + '</strong> PDF?';
+      const modal = document.getElementById('pdfModal');
+      modal.style.display = 'flex';
+      // Trigger reflow for transition
+      void modal.offsetWidth;
+      modal.classList.add('show');
+    }
+
+    function closePdfModal() {
+      const modal = document.getElementById('pdfModal');
+      modal.classList.remove('show');
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 300);
+    }
+
+    document.getElementById('confirmPdfBtn').addEventListener('click', function () {
+      if (currentPdfUrl) {
+        window.open(currentPdfUrl, '_blank');
+        closePdfModal();
+      }
+    });
+
+    // Close on click outside
+    window.onclick = function (event) {
+      const modal = document.getElementById('pdfModal');
+      if (event.target == modal) {
+        closePdfModal();
+      }
     }
   </script>
 </body>

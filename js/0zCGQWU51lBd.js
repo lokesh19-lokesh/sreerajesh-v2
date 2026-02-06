@@ -1,6 +1,14 @@
 
 
 //Window Loaded Handler
+//Window Loaded Handler
+$(document).ready(function () {
+	'use strict';
+	setTimeout(function () {
+		$(".loader").fadeOut(200);
+	}, 1000); // Force hide after 1s if not already ready
+});
+
 $(window).on('load', function () {
 	'use strict';
 	$(".loader").fadeOut(200);

@@ -32,7 +32,7 @@
 
         .grids_info i {
             font-size: 28px;
-            background: #CC2027;
+            background: #c58723;
             color: #fff;
             width: 60px;
             height: 60px;
@@ -231,7 +231,7 @@
             height: 65px;
             line-height: 65px;
             border-radius: 50%;
-            background: #CC2027;
+            background: #c58723;
             color: #fff;
         }
 
@@ -836,11 +836,11 @@
         }
 
         .footer-top-16 {
-            background-color: #CC2027;
+            background-color: #c58723;
         }
 
         .copy-section {
-            background-color: #CC2027;
+            background-color: #c58723;
         }
 
         .w3l-footer-16 h3 {

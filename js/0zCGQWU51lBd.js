@@ -187,7 +187,11 @@ jQuery(function ($) {
 
 
 	// ================ Filter Mix gallery =================
-	$(".zerogrid").mixItUp();
+	$(".zerogrid").mixItUp({
+		layout: {
+			display: 'flex'
+		}
+	});
 
 
 

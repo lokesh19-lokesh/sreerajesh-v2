@@ -38,6 +38,43 @@
             margin-top: 10px;
         }
 
+        /* Loader Styles */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader-logo {
+            width: 180px;
+            height: auto;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
         .py-5 {
             padding-top: 10rem !important;
             padding-bottom: 3rem !important;
@@ -209,11 +246,8 @@
 <body>
     <!--Loader-->
     <div class="loader">
-        <div class="cssload-container">
-            <div class="cssload-circle">
-            </div>
-            <div class="cssload-circle">
-            </div>
+        <div class="loader-content">
+            <img loading="lazy" src="rajeshimedia/logo.png" alt="Sree Rajesh Caterers" class="loader-logo">
         </div>
     </div>
     <!--Topbar-->

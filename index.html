@@ -1144,6 +1144,65 @@
       }
     }
   </script>
+  <!-- Booking Confirmation Modal -->
+  <div id="bookingModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Booking Confirmation Terms</h2>
+      </div>
+      <div class="modal-body">
+        <p>Thank you for your interest in Sree Rajesh Catering & Supply.</p>
+        <p>To confirm your booking:</p>
+        <ul>
+          <li><strong>20% advance</strong> is required immediately.</li>
+          <li><strong>Further 50%</strong> of the total amount must be paid two days prior to the event.</li>
+          <li>The remaining balance can be settled after the event.</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 14px; color: #555;"><i>Please note that a 5% GST will be applicable for
+            online payments.</i></p>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelBtn" class="btn-cancel">Cancel</button>
+        <button id="confirmBtn" class="btn-confirm">Agree & Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('.signin-form');
+      const modal = document.getElementById('bookingModal');
+      const confirmBtn = document.getElementById('confirmBtn');
+      const cancelBtn = document.getElementById('cancelBtn');
+      let isConfirmed = false;
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          if (!isConfirmed) {
+            e.preventDefault(); // Stop submission
+            modal.style.display = 'flex'; // Show modal
+          }
+        });
+      }
+
+      confirmBtn.addEventListener('click', function () {
+        isConfirmed = true;
+        modal.style.display = 'none';
+        form.submit(); // Submit the form programmatically
+      });
+
+      cancelBtn.addEventListener('click', function () {
+        modal.style.display = 'none'; // Close modal
+      });
+
+      // Close modal if clicking outside content
+      window.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

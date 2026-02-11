@@ -1,5 +1,5 @@
         :root {
-            --bg-color: #c58723;
+            --bg-color: #f5cc35;
         }
 
         .logo-image {
@@ -36,7 +36,7 @@
 
         .grids_info i {
             font-size: 28px;
-            background: #c58723;
+            background: #f5cc35;
             color: #fff;
             width: 60px;
             height: 60px;
@@ -147,7 +147,7 @@
         }
 
         .w3l-testimonials .sub-title {
-            color: #c58723;
+            color: #f5cc35;
             font-weight: 600;
         }
 
@@ -235,7 +235,7 @@
             height: 65px;
             line-height: 65px;
             border-radius: 50%;
-            background: #c58723;
+            background: #f5cc35;
             color: #fff;
         }
 
@@ -831,11 +831,11 @@
         }
 
         .footer-top-16 {
-            background-color: #c58723;
+            background-color: #f5cc35;
         }
 
         .copy-section {
-            background-color: #c58723;
+            background-color: #f5cc35;
         }
 
         /*--//owl-slider--*/

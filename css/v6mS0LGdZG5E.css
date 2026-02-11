@@ -381,7 +381,7 @@ ul.menu_widget li{
 	font-size:16px;
 	color:#fff;
 	padding:10px 10px;
-	background-color: #c58723;
+	background-color: #f5cc35;
 	line-height:18px;
 }
 ul.menu_widget li:nth-child(2n+2){
@@ -1851,7 +1851,7 @@ form.callus .btn-submit:hover{
 /* ============== Index2 =============== */
 .feature{ margin:25px 0;}
 .feature i{
-  background: #c58723;
+  background: #f5cc35;
   border: 3px solid #e25111;
   border-radius: 100%;
   box-shadow: 0 0 0 3px #ffffff inset;

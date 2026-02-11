@@ -14944,7 +14944,7 @@ ul.menu_widget li {
 	font-size: 16px;
 	color: #fff;
 	padding: 10px 10px;
-	background-color: #f5cc35;
+	background-color: #e25111;
 	line-height: 18px;
 }
 
@@ -15212,8 +15212,8 @@ ul.social_icon li a,
 /* ============= Header =============== */
 #main-navigation {
 	position: fixed;
-	background: transparent;
-	margin-top: 50px;
+	background: rgba(0, 0, 0, 0.73);
+	margin-top: 36px;
 }
 
 #navigation.affix {
@@ -15258,11 +15258,11 @@ ul.social_icon li a,
 }
 
 #main-navigation .navbar-brand {
-	padding: 24px 0;
+	padding: 10px 0;
 }
 
 #navigation.affix .navbar-brand {
-	padding: 14px 0;
+	padding: 10px 0;
 }
 
 .navbar-left {
@@ -15336,7 +15336,7 @@ ul.social_icon li a,
 }
 
 .navbar-default .navbar-nav>li.active>a {
-	background-color: rgba(0, 0, 0, 0.56);
+	background-color: #e25111;
 }
 
 .navbar-default .navbar-nav>.open>a,
@@ -16620,7 +16620,7 @@ ul.digits li {
 
 .recipe_box {
 	position: relative;
-	background: #E25111;
+	background: #e25111;
 	padding: 20px;
 	color: #fff;
 }
@@ -16932,7 +16932,7 @@ form.callus .btn-submit:hover {
 
 .pricing_feature li>strong {
 	float: right;
-	color: #E25111;
+	color: #e25111;
 }
 
 .pricing_feature li:nth-of-type(2n+1) {
@@ -16976,7 +16976,7 @@ form.callus .btn-submit:hover {
 }
 
 .search_location .find-btn {
-	background: #E25111;
+	background: #e25111;
 	border: medium none;
 	color: #fff;
 	font-size: 20px;
@@ -16998,7 +16998,7 @@ form.callus .btn-submit:hover {
 }
 
 .feature i {
-	background: #f5cc35;
+	background: #e25111;
 	border: 3px solid #e25111;
 	border-radius: 100%;
 	box-shadow: 0 0 0 3px #ffffff inset;
@@ -17612,4 +17612,66 @@ footer .copyright ul.social_icon {
 	}
 
 
+}
+
+#detailed-menu .service-item {
+	padding: 30px;
+	height: 400px;
+	overflow-y: auto;
+	transition: all 0.3s ease;
+	border: 1px solid #f0f0f0;
+	background: #ffffff !important;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	margin-bottom: 1rem;
+}
+
+#detailed-menu .service-item::-webkit-scrollbar {
+	display: none;
+}
+
+#detailed-menu .service-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	border-color: #fbaf32;
+}
+
+#detailed-menu .service-item h4 {
+	color: #222;
+	font-size: 1.1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #fbaf32;
+	display: block;
+}
+
+#detailed-menu .service-item ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#detailed-menu .service-item li {
+	position: relative;
+	padding: 6px 0 6px 20px;
+	font-size: 14px;
+	color: #555;
+	line-height: 1.4;
+	border-bottom: 1px solid #f9f9f9;
+	list-style-type: none;
+}
+
+#detailed-menu .service-item li::before {
+	content: "✓";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	position: absolute;
+	left: 0;
+	color: #fbaf32;
+	font-size: 12px;
+}
+
+#detailed-menu .service-item li:last-child {
+	border-bottom: none;
 }

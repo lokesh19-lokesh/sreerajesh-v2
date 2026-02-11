@@ -1,10 +1,10 @@
 /* Standardized Footer Styles */
 .footer-top-16 {
-    background-color: #f5cc35;
+    background-color: #e25111;
 }
 
 .copy-section {
-    background-color: #f5cc35;
+    background-color: #e25111;
 }
 
 .w3l-footer-16 h3 {
@@ -126,7 +126,7 @@ footer p {
     cursor: pointer;
     width: 18%;
     color: #fff;
-    background: #f50537;
+    background: #e25111;
     border-radius: 0 30px 30px 0;
 }
 

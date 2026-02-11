@@ -35,6 +35,10 @@
     font-size: 18px;
 }
 
+.w3l-footer-16 li a:hover {
+    color: #fff;
+}
+
 .footer-botm p span {
     width: 80px;
 }
@@ -43,9 +47,7 @@ footer p {
     font-size: 20px;
 }
 
-.w3l-footer-16 li a:hover {
-    color: #e25111;
-}
+
 
 .footer-contact-list li {
     display: flex;
@@ -326,7 +328,7 @@ footer p {
 /* Mobile Hero Fix: Push hero section down to avoid navbar overlap */
 @media (max-width: 991px) {
     #demo {
-        margin-top: 72px;
+        margin-top: 70px;
     }
 
     section.w3l-aboutblock.py-5 {

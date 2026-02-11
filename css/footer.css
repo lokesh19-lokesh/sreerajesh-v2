@@ -328,4 +328,15 @@ footer p {
     #demo {
         margin-top: 72px;
     }
+
+    section.w3l-aboutblock.py-5 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        /* Also reducing bottom padding just in case */
+    }
+
+    .w3l-aboutblock .container {
+        padding-top: 1rem !important;
+        /* Restore a tiny bit of padding so text isn't glued to image */
+    }
 }

@@ -339,4 +339,39 @@ footer p {
         padding-top: 1rem !important;
         /* Restore a tiny bit of padding so text isn't glued to image */
     }
+
+    /* Why Choose Us Mobile Fix: 2x2 Grid + Smaller Icons */
+    .w3l-whyblock .two-grids {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 1.5rem !important;
+    }
+
+    .w3l-whyblock .grids_info {
+        grid-auto-flow: row !important;
+        justify-items: center !important;
+        text-align: center !important;
+        margin-top: 0 !important;
+        /* Reset individual margins */
+    }
+
+    .w3l-whyblock .grids_info i {
+        width: 50px !important;
+        height: 50px !important;
+        line-height: 50px !important;
+        font-size: 20px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .w3l-whyblock .grids_info h4 {
+        font-size: 16px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .w3l-whyblock .grids_info p {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
 }

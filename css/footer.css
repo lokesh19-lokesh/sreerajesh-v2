@@ -322,3 +322,10 @@ footer p {
 .btn-cancel:hover {
     background-color: #ddd;
 }
+
+/* Mobile Hero Fix: Push hero section down to avoid navbar overlap */
+@media (max-width: 991px) {
+    #demo {
+        margin-top: 72px;
+    }
+}
